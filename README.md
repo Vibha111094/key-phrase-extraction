@@ -45,7 +45,7 @@ How RAKE algorithm works?
 - We start by selecting the keyword/keyphrase that is the most similar to the document. Then, we iteratively select new candidates that are both similar to the document and not similar to the already selected keywords/keyphrases.
 
 Design:
-
+Have built a simple streamlit App, that takes in the FileName as in the image attached.
 We run the algorithms on the entire data and store it in a dataframe which is then cached.
 On a new request, we query the file name against the existing existing dataframe and fetch the corresponding keywords.
 
@@ -55,3 +55,7 @@ On a new request, we query the file name against the existing existing dataframe
 Scope for improvement:
 ----> use a database like mongodb
 ----> some patents have  numbers in them, looks like each of the numbers have a particular description associated with them. Substituting them in the patents would give better results.
+
+
+![image](https://user-images.githubusercontent.com/16645902/139236472-f0d3bc87-e6e4-4d51-97b0-0c99734950be.png)
+
