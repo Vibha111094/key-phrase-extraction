@@ -20,7 +20,7 @@ How RAKE algorithm works?
 
 - This array is then split into sequences of contiguous words by phrase delimiters and stop word positions.
 
-- Words within a sequence are assigned the same position in the text and together are considered a candidate keyword.
+- Thesw words are considered a candidate keyword.
 
 - Calculating keyword score by taking ratio of degree to frequency of words.
 
