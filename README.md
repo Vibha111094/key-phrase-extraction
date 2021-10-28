@@ -1,4 +1,14 @@
+
 ## Key Phrase Extraction
+
+Steps to run:(On VScode)
+  - Step1 : Right Click on the dockerfile and choose build image
+  - Step2 : docker run --rm -d  -p 8501:8501/tcp kpchallenge:latest
+or right click on the latest image and choose Run
+
+  -Note: Due to size and security reasons I have not uploaded the data.
+Please upload the data and the corresponding path in the config file
+
 
 #### Method-1 : Using statistical properties of text
 
@@ -14,11 +24,7 @@ How RAKE algorithm works?
 
 - Calculating keyword score by taking ratio of degree to frequency of words.
 
-  
-
-*Reference*:
-
-https://thinkinfi.com/automatic-keyword-extraction-using-rake-in-python/
+-Arrange the phrases based on the keyword scores
 
   
 
@@ -37,3 +43,15 @@ https://thinkinfi.com/automatic-keyword-extraction-using-rake-in-python/
 - We then apply Maximal Marginal Relevance. MMR tries to minimize redundancy and maximize the diversity of results in text summarization tasks.
 
 - We start by selecting the keyword/keyphrase that is the most similar to the document. Then, we iteratively select new candidates that are both similar to the document and not similar to the already selected keywords/keyphrases.
+
+Design:
+
+We run the algorithms on the entire data and store it in a dataframe which is then cached.
+On a new request, we query the file name against the existing existing dataframe and fetch the corresponding keywords.
+
+
+
+
+Scope for improvement:
+----> use a database like mongodb
+----> some patents have  numbers in them, looks like each of the numbers have a particular description associated with them. Substituting them in the patents would give better results.
